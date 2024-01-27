@@ -1,0 +1,136 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.age-calculator {
+    margin-top: 20px;
+    background-color: white;
+    padding: 50px;
+    border-radius: 20px 20px 90px 20px;
+}
+
+.age-form {
+    display: flex;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.age-form label {
+    display: flex;
+    flex-direction: column;
+    color: hsl(0, 1%, 44%);
+
+}
+
+.age-form label input[type="number"] {
+    font-size: 25px;
+    width: 120px;
+    border: hsl(0, 0%, 86%) solid 1px;
+    border-radius: 10px;
+    margin-right: 20px;
+    padding: 5px 10px;
+    outline: none;
+    transition: border 0.3s ease;
+    caret-color: hsl(259, 100%, 65%);
+}
+
+label:has(input[type="number"].error) {
+    color: hsl(0, 100%, 67%);
+}
+
+.age-form label input[type="number"].error {
+    border: hsl(0, 100%, 67%) solid 1px;
+    color: hsl(0, 100%, 67%);
+}
+
+.age-form label input[type="number"]:focus {
+    border: hsl(259, 100%, 65%) solid 1px;
+}
+
+.age-form button {
+    background-color: hsl(259, 100%, 65%);
+    border: none;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    position: relative;
+    margin-left: 20px;
+    top: 100px;
+    z-index: 1;
+}
+
+.age-form button:active {
+    background-color: black;
+}
+
+.age-form::after {
+    content: "";
+    background-color: hsl(0, 0%, 86%);
+    width: 90%;
+    z-index: 0;
+    height: 1px;
+    position: absolute;
+    top: 135px;
+}
+
+.details p {
+    font-size: 70px;
+    font-style: italic;
+    font-weight: 800;
+}
+
+.details p span {
+    color: hsl(259, 100%, 65%);
+}
+
+@media only screen and (max-width: 640px) {
+    .age-calculator {
+        width: 95vw;
+    }
+
+    .age-form {
+        justify-content: center;
+    }
+
+    .age-form button {
+        position: absolute;
+        margin-left: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .age-form::after {
+        width: 100%;
+    }
+
+    .age-form label input[type="number"] {
+        font-size: 25px;
+        width: 90px;
+        margin-right: 5px;
+    }
+
+}
+
+
+/* remove arrows input[type="number"]*/
+/* For modern browsers */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Additional styles to prevent styling inconsistencies */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
