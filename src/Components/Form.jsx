@@ -10,7 +10,6 @@ function Form({ setAgeForm }) {
 
     const handleChange = (e) => {
         const form = e.target.parentElement.parentElement
-        const targetName = e.target.name
 
         if (e.target.value === "") {
             setDate({
@@ -55,7 +54,7 @@ function Form({ setAgeForm }) {
         if (!error.includes(true)){
             setAgeForm(date)
         } 
-        alert("enviado")
+    
     }
 
     return (
